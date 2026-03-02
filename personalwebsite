@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Portfolio | Pink Terminal</title>
+    <style>
+        :root {
+            --main-pink: #ff79c6;
+            --dark-pink: #ff92df;
+            --bg-color: #1e1e2e;
+            --card-bg: #282a36;
+            --text-color: #f8f8f2;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e1e2e, #2b2d42, #3a0ca3);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--main-pink);
+            box-shadow: 0 0 20px var(--main-pink);
+        }
+
+        h1 {
+            color: var(--main-pink);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            margin-top: 40px;
+        }
+
+        .terminal-window {
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--main-pink);
+            padding: 20px;
+            box-shadow: 5px 5px 0px var(--main-pink);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid var(--main-pink);
+            color: var(--main-pink);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--main-pink);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--main-pink);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #44475a;
+            color: var(--dark-pink);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 5px;
+            font-size: 0.8rem;
+        }
+
+        /* SKILL BAR SYSTEM */
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #44475a;
+            height: 10px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background: var(--main-pink);
+            border-radius: 20px;
+            transition: width 1.2s ease;
+        }
+
+        #status-log {
+            color: #50fa7b;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Denise_Alvaran.exe</h1>
+    <p>BS Information Technology Major in Business Analytics</p>
+</header>
+
+<div class="container">
+
+    <div class="terminal-window">
+        <h2 style="color: var(--main-pink)">> WHO_AM_I</h2>
+        <p>
+            Hello! I'm Denise, a BSIT-BA student focused on building functional
+            web-based systems and data-driven solutions. I work on booking systems,
+            inventory tracking, and analytics dashboards with clean and aesthetic interfaces.
+        </p>
+
+        <div>
+            <span class="skill-tag">Web Development</span>
+            <span class="skill-tag">Database Management</span>
+            <span class="skill-tag">Business Analytics</span>
+            <span class="skill-tag">Forecasting</span>
+            <span class="skill-tag">UI Design</span>
+        </div>
+    </div>
+
+    <!-- DYNAMIC SKILLS SECTION -->
+    <div class="terminal-window">
+        <h2 style="color: var(--main-pink)">> SKILL_MATRIX</h2>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Data Analysis</span>
+                <span class="skill-level"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" data-percent="85"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>System Development</span>
+                <span class="skill-level"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" data-percent="82"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Database Management</span>
+                <span class="skill-level"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" data-percent="83"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Microsoft Excel</span>
+                <span class="skill-level"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" data-percent="78"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Communication</span>
+                <span class="skill-level"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" data-percent="84"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="terminal-window">
+        <h2 style="color: var(--main-pink)">> CHAOTIC_SYSTEM_SCAN</h2>
+        <p>Click to check if this portfolio is cute & functional.</p>
+        <button class="btn" onclick="runDiagnostics()">INITIATE CHAOS</button>
+        <div id="status-log">Waiting for dramatic entrance...</div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 50px;">
+        <p>Need a system that's smart and well-designed?</p>
+        <a href="mailto:denise.alvaran.it@gmail.com" class="btn" style="text-decoration: none;">CONTACT_ME</a>
+    </div>
+
+</div>
+
+<script>
+    /* SKILL SYSTEM LOGIC */
+    const fills = document.querySelectorAll('.progress-fill');
+
+    fills.forEach(fill => {
+        const percent = fill.getAttribute('data-percent');
+        fill.style.width = percent + "%";
+
+        const levelText = fill.closest('.skill').querySelector('.skill-level');
+
+        let level;
+        if (percent >= 85) {
+            level = "Expert";
+        } else if (percent >= 75) {
+            level = "Advanced";
+        } else if (percent >= 60) {
+            level = "Intermediate";
+        } else {
+            level = "Beginner";
+        }
+
+        levelText.textContent = `${level} (${percent}%)`;
+    });
+
+    /* CHAOTIC SCAN */
+    function runDiagnostics() {
+        const log = document.getElementById('status-log');
+        const statuses = [
+            "Booting Pink Core v2.0 💗",
+            "Checking vibes... ✨",
+            "Scanning for bugs... 🐛",
+            "Converting stress into code... 💻",
+            "Injecting aesthetic energy... 🌸",
+            "System overload from cuteness...",
+            "Portfolio Status: Fully Functional & Stylish 😌"
+        ];
+        
+        log.innerHTML = "";
+        let i = 0;
+
+        const interval = setInterval(() => {
+            if (i < statuses.length) {
+                log.innerHTML += "> " + statuses[i] + "<br>";
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, 700);
+    }
+</script>
+
+</body>
+</html>
